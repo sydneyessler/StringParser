@@ -4,19 +4,19 @@ import static java.lang.System.*;
 String vowels="aeiouy";
 
 String output6;
-String output8;
+String output8;      //Strings to hold writing 
 String output10;
 String output12;
 
 Scanner six;
 Scanner eight;
-Scanner ten;
+Scanner ten;      //scanners for each text file
 Scanner twelve;
 
 void setup() {
-  
-  
-///////////66666666666666666666666///////////////
+
+
+  ///////////66666666666666666666666///////////////
 
   try {
     six = new Scanner(new File("Desktop/StringParser5/Data/Syd6thGrade.txt"));
@@ -28,7 +28,7 @@ void setup() {
     e.printStackTrace();
   }
   println(output6);
-  
+
   String six6 = output6;
   StringParser sixth= new StringParser(six6);
   println("words " + sixth.countWords());
@@ -37,8 +37,8 @@ void setup() {
   println("sentences " + sixth.countSentences());
   println("Flesch Reading Ease " + sixth.FleschReadingEase());
   println("Flesch Grade " + sixth.FleschGrade());
-  
-///////8888888888888888888888888888////////////////
+
+  ///////8888888888888888888888888888////////////////
   try {
     eight = new Scanner(new File("Desktop/StringParser5/Data/Syd8thGrade.txt"));
     while (eight.hasNext()) {
@@ -49,7 +49,7 @@ void setup() {
     e.printStackTrace();
   }
   println(output8);
-  
+
   String eight8 = output8;
   StringParser eight= new StringParser(eight8);
   println("words " + eight.countWords());
@@ -58,10 +58,10 @@ void setup() {
   println("sentences " + eight.countSentences());
   println("Flesch Reading Ease " + eight.FleschReadingEase());
   println("Flesch Grade " + eight.FleschGrade());
- 
- ///////10101010101101010101010101/////////
- 
- try {
+
+  ///////10101010101101010101010101/////////
+
+  try {
     ten = new Scanner(new File("Desktop/StringParser5/Data/Syd10thGrade.txt"));
     while (ten.hasNext()) {
       output10+=ten.next()+ " ";
@@ -71,7 +71,7 @@ void setup() {
     e.printStackTrace();
   }
   println(output10);
-  
+
   String ten10 = output10;
   StringParser ten= new StringParser(ten10);
   println("words " + ten.countWords());
@@ -80,10 +80,10 @@ void setup() {
   println("sentences " + ten.countSentences());
   println("Flesch Reading Ease " + ten.FleschReadingEase());
   println("Flesch Grade " + ten.FleschGrade());
-  
-  
+
+
   //////121212121212112212//////
-  
+
   try {
     twelve = new Scanner(new File("Desktop/StringParser5/Data/Syd12thGrade.txt"));
     while (twelve.hasNext()) {
@@ -94,7 +94,7 @@ void setup() {
     e.printStackTrace();
   }
   println(output12);
-  
+
   String twelve12 = output12;
   StringParser twelve= new StringParser(twelve12);
   println("words " + twelve.countWords());
@@ -103,14 +103,85 @@ void setup() {
   println("sentences " + twelve.countSentences());
   println("Flesch Reading Ease " + twelve.FleschReadingEase());
   println("Flesch Grade " + twelve.FleschGrade());
-  
- 
+
+  //basic setup
   size(500, 500);//sets up the screen, background is white
   background(0);
-  textSize(22);
+  textSize(20);
   fill(255);
-  text("Sydney's Essays: Flesch Reading Ease", 60, 40);
+  text("6th-12th Grade Essays: Flesch-Kincaid Readability", 10, 40);
+
+  //Squares/Text:
+  fill(255, 0, 0);
+  rect(100, 100, 105, 105, 7);
+  fill(0, 255, 0);
+  rect(290, 100, 105, 105, 7);
+  fill(0, 0, 255);
+  rect(100, 250, 105, 105, 7);
+  fill(255, 255, 0);
+  rect(290, 250, 105, 105, 7);
+  fill(0);
+  textSize(45);
+  text("6th", 115, 170);
+  text("8th", 310, 170);
+  text("10th", 100, 320);
+  text("12th", 290, 320);
+
+  //mouse interaction
+
+
+  if (mousePressed && isBetween(mouseX, 100, 205))
+  {
+    if (mousePressed && isBetween(mouseY, 100, 205))
+    {
+      fill(255);
+      textSize(15);
+      text("Sixth Grade Informative Essay About Seatbelts", 20, 200);
+      text("Reading Ease: " + sixth.FleschReadingEase() + " Grade Level: " + sixth.FleschGrade(), 20, 210);
+    }
+  }
   
+  
+  
+  
+  
+  if (mousePressed && isBetween(mouseX, 290, 395))
+  {
+    if (mousePressed && isBetween(mouseY, 100, 205))
+    {
+      fill(255);
+      textSize(15);
+      text("Eighth Grade Informative Essay About Seatbelts", 20, 200);
+      text("Reading Ease: " + eight.FleschReadingEase() + " Grade Level: " + eight.FleschGrade(), 20, 210);
+    }
+  }
+
+
+
+
+if (mousePressed && isBetween(mouseX, 100, 205))
+  {
+    if (mousePressed && isBetween(mouseY, 250, 355))
+    {
+      fill(255);
+      textSize(15);
+      text("Tenth Grade Informative Essay About Seatbelts", 20, 200);
+      text("Reading Ease: " + ten.FleschReadingEase() + " Grade Level: " + ten.FleschGrade(), 20, 210);
+    }
+  }
+  
+  
+  if (mousePressed && isBetween(mouseX, 290, 395))
+  {
+    if (mousePressed && isBetween(mouseY, 250, 355))
+    {
+      fill(255);
+      textSize(15);
+      text("Twelfth Grade Informative Essay About Seatbelts", 20, 200);
+      text("Reading Ease: " + twelve.FleschReadingEase() + " Grade Level: " + twelve.FleschGrade(), 20, 210);
+    }
+  }
+
 }
 
 public class StringParser {
@@ -118,7 +189,7 @@ public class StringParser {
   String [] words;
   String [] sentence;
   char[] cArray2;
-  
+
   //public StringParser() {
   //  s = "";
   //  //text= s.toLowerCase();
@@ -126,11 +197,11 @@ public class StringParser {
   //  String [] sentence=text.split("[\\!.]");
   //  char[] cArray2 = text.toCharArray();
   //}
-  
+
   public StringParser(String t)
   {
-     s = t;
-     //text= t.toLowerCase();
+    s = t;
+    //text= t.toLowerCase();
   }
 
   /**
@@ -148,10 +219,10 @@ public class StringParser {
   }
 
   public int countVowels() {
-String text= s.toLowerCase();
+    String text= s.toLowerCase();
     int vowels = 0;
     char[] cArray2 = text.toCharArray();
-    
+
     for (int i=0; i<cArray2.length; i++ )
     {
       if (cArray2[i] == 'a' || cArray2[i] == 'e' || cArray2[i]== 'i' ||cArray2[i] == 'o' || cArray2[i] == 'u' || cArray2[i] == 'y')
@@ -214,48 +285,48 @@ String text= s.toLowerCase();
   public int countSentences() {
     String text= s.toLowerCase();
     String [] sentence=text.split("[\\!.]");
-         
+
     return sentence.length;
   }
 
   public double FleschReadingEase() {
     double fre = 0;
-    int tw = countWords();
-    int tsen = countSentences();
-    int tsyl = countSyllablesHelper();
+    double tw = (double)countWords();
+    double tsen = (double)countSentences();
+    double tsyl = (double)countSyllablesHelper();
 
-    fre = (.39)*(tw/tsen) + (11.8)*(tsyl/tw) - (15.59);
+    fre = 206.835 - ((1.015)*(tw/tsen)) - ((84.6)*(tsyl/tw));
 
     return fre;
   }
 
   public String FleschGrade() {
 
-    if (FleschReadingEase() > 90 || FleschReadingEase() <= 100)
+    if (FleschReadingEase() > 90 && FleschReadingEase() <= 100)
     { 
       return "Grade 5";
     }
-    if (FleschReadingEase() > 80 || FleschReadingEase() <= 90)
+    if (FleschReadingEase() > 80 && FleschReadingEase() <= 90)
     { 
       return "Grade: 6";
     }
-    if (FleschReadingEase() > 70 || FleschReadingEase() <= 80)
+    if (FleschReadingEase() > 70 && FleschReadingEase() <= 80)
     { 
       return "Grade: 7";
     }
-    if (FleschReadingEase() > 60 || FleschReadingEase() <= 70)
+    if (FleschReadingEase() > 60 && FleschReadingEase() <= 70)
     { 
       return "Grade: 8-9";
     }
-    if (FleschReadingEase() > 50 || FleschReadingEase() <= 60)
+    if (FleschReadingEase() > 50 && FleschReadingEase() <= 60)
     { 
       return "Grade: 10-12";
     }
-    if (FleschReadingEase() > 30 || FleschReadingEase() <= 50)
+    if (FleschReadingEase() > 30 && FleschReadingEase() <= 50)
     { 
       return "Grade: College";
     }
-    if (FleschReadingEase() > 0 || FleschReadingEase() <= 30)
+    if (FleschReadingEase() > 0 && FleschReadingEase() <= 30)
     { 
       return "Grade: College Graduate";
     }
@@ -266,8 +337,19 @@ String text= s.toLowerCase();
     if (FleschReadingEase() >100)
     { 
       return "Grade: Above College Graduate";
-    }
-    
-    else return "Grade: Unavalible";
+    } else return "Grade: Unavalible";
   }
+}
+
+boolean isBetween(int x, int low, int high)
+{
+  boolean between = false;
+
+  for (int a = low; a<=high; a++)
+  {
+    if (a==x)
+      between = true;
+  } 
+
+  return between;
 }
