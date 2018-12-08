@@ -44,6 +44,10 @@ Here is the independent isBetween method that is utilized in this project:
 	} 
 			return between;
 	}
+	
+The most challenging parts of this project for were figuring out how to read in multiple files and getting the interface to display the desired information when the buttons are pressed. In order to read in multiple files, I went through the string parser class and altered it to be a class that takes in a string. That was somewhat painless, but the part that caused me the most struggling was getting four different files into the class. Although it may not be the most efficent way, I finally figured out I could use four separate StringParser objects and have four sets of everything (one for each of the grades I used). The other challenging part of this project was getting the interface to display the readability score and grade level when the buttons were clicked. To overcome this, I stored the desired values in variables rather than calling the FleschReadingEase() and FleschGrade() methods when giving the string I wanted displayed when the buttons were clicked.
+
+
   
   
   
