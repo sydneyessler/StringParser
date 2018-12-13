@@ -3,6 +3,7 @@ import static java.lang.System.*;
 
 String vowels="aeiouy";
 
+
 String output6;
 String output8;      //Strings to hold writing 
 String output10;
@@ -87,7 +88,7 @@ void setup() {
   catch(Exception e) {
     e.printStackTrace();
   }
-  println(output12);
+  
 
   String twelve12 = output12;
   StringParser twelve= new StringParser(twelve12);
@@ -116,7 +117,6 @@ void setup() {
   text("8th", 310, 170);
   text("10th", 100, 320);
   text("12th", 290, 320);
-
   
 }
 
@@ -126,40 +126,39 @@ void draw(){
   fill(255);
   textSize(15);
       
-  if (mousePressed && mouseX>= 100 && mouseX<= 205)
+  if (mousePressed && isBetween(mouseX, 100, 205) && isBetween(mouseY, 100, 205))
   {
-    if (mousePressed && mouseY>= 100&& mouseY<=205)
-    {
- 
       text("Sixth Grade Informative Essay About Seatbelts", 80, 400);
       text("Reading Ease: " + sixnum + "  " + sixG, 57, 420);
-    }
+      fill(0);
+      rect(0, 425, 500, 150);
   }
   
-  if (mousePressed && isBetween(mouseX, 290, 395)){
-    if (mousePressed && isBetween(mouseY, 100, 205)){
-  
+  if (mousePressed && isBetween(mouseX, 290, 395) && isBetween(mouseY, 100, 205))
+  {     
       text("Eighth Grade Short Story Summary", 110, 450);
       text("Reading Ease: " + eightnum + " " + eightG, 50, 470);
-    }
+      fill(0);
+      rect(0, 380, 500, 50);
+      rect(0, 475, 520, 150);
   }
 
-if (mousePressed && isBetween(mouseX, 100, 205))
+  if (mousePressed && isBetween(mouseX, 100, 205) && isBetween(mouseY, 250, 355))
   {
-    if (mousePressed && isBetween(mouseY, 250, 355))
-    {
       text("Tenth Grade APUSH DBQ", 150, 500);
       text("Reading Ease: " + tennum + " " + tenG, 40, 520);
-    }
+      fill(0);
+      rect(0, 390, 500, 90);
+      rect(0, 525, 520, 150);
   }
   
   
-  if (mousePressed && isBetween(mouseX, 290, 395))
+  if (mousePressed && isBetween(mouseX, 290, 395) && isBetween(mouseY, 250, 355))
   {
-    if (mousePressed && isBetween(mouseY, 250, 355))
-    {
       text("Twelfth Grade Persuasive Essay", 130, 550);
       text("Reading Ease: " + twelvenum + " " + twelveG, 40, 570);
-    }
+      fill(0);
+      rect(0,400,500,125);
   }
+  
 }
