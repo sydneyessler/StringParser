@@ -148,7 +148,7 @@ void draw(){
       text("Tenth Grade APUSH DBQ", 150, 500);
       text("Reading Ease: " + tennum + " " + tenG, 40, 520);
       fill(0);
-      rect(0, 390, 500, 90);
+      rect(0, 360, 500, 120);
       rect(0, 525, 520, 150);
   }
   
@@ -158,7 +158,7 @@ void draw(){
       text("Twelfth Grade Persuasive Essay", 130, 550);
       text("Reading Ease: " + twelvenum + " " + twelveG, 40, 570);
       fill(0);
-      rect(0,400,500,125);
+      rect(0,360,500,165);
   }
   
 }
